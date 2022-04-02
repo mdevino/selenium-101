@@ -1,11 +1,19 @@
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 
 from .pages import TrainingGroundPage
 
 
-driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+options = Options()
+options.add_argument("--headless")
+options.add_argument("--window-size=1920,1080")
+options.add_argument("--hide-scrollbars")
+
+driver = webdriver.Chrome(
+    service=Service(ChromeDriverManager().install()), options=options
+)
 
 page = TrainingGroundPage(driver)
 
@@ -36,5 +44,7 @@ print(page.button3.attribute("name"))
 print(page.button4.text)
 print(page.button4.attribute("name"))
 # page.button4.click()
+
+driver.save_screenshot("test-full-hd-no-scroll.png")
 
 driver.quit()
