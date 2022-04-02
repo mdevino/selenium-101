@@ -1,12 +1,13 @@
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
+from selenium.webdriver.remote.webelement import WebElement
 
 
 class BaseElement:
     def __init__(self, driver, locator):
         self.driver = driver
         self.locator = locator
-        self.web_element = None
+        self.web_element: WebElement = None
         self.find()
 
     def find(self):

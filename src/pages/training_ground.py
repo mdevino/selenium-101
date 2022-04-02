@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 
 from .base_page import BasePage
-from ..elements import BaseElement, Locator
+from ..elements import BaseElement, InputElement, Locator
 
 
 class TrainingGroundPage(BasePage):
@@ -9,7 +9,7 @@ class TrainingGroundPage(BasePage):
 
     @property
     def input_field(self):
-        return BaseElement(self.driver, Locator(By.ID, "ipt1"))
+        return InputElement(self.driver, Locator(By.ID, "ipt1"))
 
     @property
     def button1(self):
@@ -21,7 +21,7 @@ class TrainingGroundPage(BasePage):
 
     @property
     def another_input_field(self):
-        return BaseElement(self.driver, Locator(By.ID, "ipt2"))
+        return InputElement(self.driver, Locator(By.ID, "ipt2"))
 
     @property
     def button3(self):
