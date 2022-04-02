@@ -10,9 +10,12 @@ driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 page = TrainingGroundPage(driver)
 
 page.go()
-page.type_into_input("Yo!")
-text = page.get_input_text()
-
-print(f"Text: '{text}'")
+print(page.input_field.attribute("name"))
+print(page.input_field.text)
+page.input_field.enter_text("Potato!")
+print(page.input_field.text)
+print(page.button1.text)
+print(page.button1.attribute("name"))
+page.button1.click()
 
 driver.quit()
