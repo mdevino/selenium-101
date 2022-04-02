@@ -12,6 +12,13 @@
             "justMyCode": true
         },
         {
+            "name": "Trial of the Stones",
+            "type": "python",
+            "request": "launch",
+            "module": "src.trial_of_the_stones",
+            "justMyCode": true
+        },
+        {
             "name": "Python: Current File",
             "type": "python",
             "request": "launch",

@@ -24,6 +24,15 @@ Install requirements
 pip install -r ./requirements.txt
 ```
 
+## How to Run Me
+
+Due to relative imports, files must be run as modules.
+
+```
+python -m src.trial_of_the_stones
+```
+
+
 ## Resources
 
 * [Selenium documentation](https://www.selenium.dev/documentation/)
